@@ -1,8 +1,10 @@
 import express from 'express';
 import chalk from 'chalk';
+import logger from './middleware/logger';
 
 const app = express();
 
+app.use(logger);
 app.use(express.json());
 
 const PORT = 4000;
