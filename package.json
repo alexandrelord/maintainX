@@ -1,0 +1,19 @@
+{
+  "name": "maintainx",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexandrelord/maintainX.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alexandrelord/maintainX/issues"
+  },
+  "homepage": "https://github.com/alexandrelord/maintainX#readme",
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "scripts": {
+    "start": "concurrently \"npm start --prefix frontend\" \"npm run dev --prefix backend\"",
+    "install": "npm --prefix frontend install && npm --prefix backend install"
+  }
+}
