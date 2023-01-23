@@ -39,6 +39,10 @@ const Detail = () => {
         }
     };
 
+    const handleShowEmail = () => {
+        console.log('show email');
+    };
+
     return (
         <div className={styles.container}>
             <div>
@@ -59,6 +63,19 @@ const Detail = () => {
                                 <strong>Status:</strong> {workOrder.data.status}
                             </p>
                             <button onClick={handleUpdateWorkOrder}>Update Status</button>
+                            <p>
+                                <strong>Assignees</strong>
+                            </p>
+
+                            <ol>
+                                {workOrder.data.assignees &&
+                                    workOrder.data.assignees.map((assignee) => (
+                                        <li key={assignee.id} className={styles.assignee}>
+                                            {assignee.name}
+                                            <span className={styles.tooltiptext}>{assignee.email}</span>
+                                        </li>
+                                    ))}
+                            </ol>
                         </div>
                     </div>
                 )}
