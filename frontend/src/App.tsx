@@ -4,6 +4,7 @@ import Layout from './components/Layout';
 import WorkOrderCmpt from './components/WorkOrders/WorkOrders';
 import Detail from './components/WorkOrders/Detail/Detail';
 import Productivity from './components/Productivity/Productivity';
+import Create from './components/WorkOrders/Create/Create';
 
 function App() {
     return (
@@ -14,7 +15,7 @@ function App() {
                     <Route index element={<WorkOrderCmpt />} />
                     <Route path=":id" element={<Detail />} />
                 </Route>
-                <Route path="new" element={<h1>New Work Order</h1>} />
+                <Route path="new" element={<Create />} />
                 <Route path="productivity" element={<Productivity />} />
                 <Route path="*" element={<h1>Not Found</h1>} />
             </Route>
