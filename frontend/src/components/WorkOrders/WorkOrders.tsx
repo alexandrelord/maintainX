@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { WorkOrder } from '../../types/types';
 import useFetchReducer from '../../hooks/useFetchReducer';
 import { apiCall } from '../../services/apiCall';
-import List from './List';
+import List from '../List/List';
 import './WorkOrders.css';
 
 const WorkOrders = () => {
