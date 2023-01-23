@@ -2,7 +2,7 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import WorkOrderCmpt from './components/WorkOrders/WorkOrders';
-import Detail from './components/Detail/Detail';
+import Detail from './components/WorkOrders/Detail/Detail';
 
 function App() {
     return (
