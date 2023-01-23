@@ -13,7 +13,7 @@ function List<T>({ list, render }: ListProps<T>) {
     }
 
     return (
-        <table className={styles.woTable}>
+        <table className={styles.listTable}>
             <thead>
                 <tr>
                     {tblHeaders.map((header) => (
