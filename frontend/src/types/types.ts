@@ -2,6 +2,7 @@ export type WorkOrder = {
     id: number;
     name: string;
     status: string;
+    assignees: User[];
 };
 
 export type User = {
