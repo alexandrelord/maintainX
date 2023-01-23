@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import WorkOrderCmpt from './components/WorkOrders/WorkOrders';
 import Detail from './components/WorkOrders/Detail/Detail';
+import Productivity from './components/Productivity/Productivity';
 
 function App() {
     return (
@@ -14,7 +15,7 @@ function App() {
                     <Route path=":id" element={<Detail />} />
                 </Route>
                 <Route path="new" element={<h1>New Work Order</h1>} />
-                <Route path="productivity" element={<h1>Productivity</h1>} />
+                <Route path="productivity" element={<Productivity />} />
                 <Route path="*" element={<h1>Not Found</h1>} />
             </Route>
         </Routes>

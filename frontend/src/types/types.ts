@@ -4,6 +4,12 @@ export type WorkOrder = {
     status: string;
 };
 
+export type User = {
+    id: number;
+    name: string;
+    email: string;
+};
+
 export type fetchState<T> = {
     data: T;
     isLoading: boolean;
