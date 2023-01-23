@@ -1,19 +1,24 @@
-import { useEffect, useState } from 'react';
-import { WorkOrder, WorkOrders } from '../../types/types';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { WorkOrder } from '../../types/types';
 import useFetchReducer from '../../hooks/useFetchReducer';
 import { apiCall } from '../../services/apiCall';
-import List from './List';
-import './WorkOrderCmpt.css';
+import List from '../List/List';
+import './WorkOrders.css';
 
-const WorkOrderCmpt = () => {
-    const [workOrders, dispatchWorkOrders] = useFetchReducer<WorkOrders>([]);
-    const [selectedWorkOrder, setSelectedWorkOrder] = useState<WorkOrder | null>(null);
+const WorkOrders = () => {
+    const [workOrders, dispatchWorkOrders] = useFetchReducer<WorkOrder[]>([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchWorkOrderList = async () => {
             dispatchWorkOrders({ type: 'FETCH_INIT' });
-            const workOrders = await handleFetchData('workorders');
-            dispatchWorkOrders({ type: 'FETCH_SUCCESS', payload: workOrders });
+            try {
+                const response = await handleFetchData('/workorders');
+                dispatchWorkOrders({ type: 'FETCH_SUCCESS', payload: response });
+            } catch (error) {
+                dispatchWorkOrders({ type: 'FETCH_FAILURE' });
+            }
         };
         fetchWorkOrderList();
     }, []);
@@ -24,10 +29,8 @@ const WorkOrderCmpt = () => {
     };
 
     const handleWorkOrderClick = (e: React.MouseEvent<HTMLTableRowElement>) => {
-        const id = parseInt(e.currentTarget.children[0].textContent || '');
-        const workOrder = workOrders.data.find((workOrder) => workOrder.id === id);
-        console.log(workOrder);
-        workOrder && setSelectedWorkOrder(workOrder);
+        const id = e.currentTarget.firstChild?.textContent;
+        navigate(`/workorders/${id}`);
     };
 
     return (
@@ -41,7 +44,7 @@ const WorkOrderCmpt = () => {
                     list={workOrders.data}
                     render={(item) => {
                         return (
-                            <tr key={item.id} onClick={handleWorkOrderClick}>
+                            <tr onClick={handleWorkOrderClick}>
                                 <td>{item.id}</td>
                                 <td>{item.name}</td>
                                 <td>{item.status}</td>
@@ -54,8 +57,4 @@ const WorkOrderCmpt = () => {
     );
 };
 
-export default WorkOrderCmpt;
-
-{
-    /*onClick={handleWorkOrderClick}*/
-}
+export default WorkOrders;
