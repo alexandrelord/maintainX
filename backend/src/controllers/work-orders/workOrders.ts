@@ -22,11 +22,11 @@ export const showWorkOrder = async (req: Request, res: Response, next: NextFunct
 };
 
 export const createWorkOrder = async (req: Request, res: Response, next: NextFunction) => {
-	const { workOrderName } = req.body;
-	const { assigneesId } = req.body;
+	const { name } = req.body;
+	const { users } = req.body;
 
 	try {
-		await insertWorkOrder(workOrderName, assigneesId);
+		await insertWorkOrder(name, users);
 
 		res.status(201).json({ message: 'Work order created successfully.' });
 	} catch (error) {
