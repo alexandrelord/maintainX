@@ -4,8 +4,6 @@ export type WorkOrder = {
     status: string;
 };
 
-export type WorkOrders = Array<WorkOrder>;
-
 export type fetchState<T> = {
     data: T;
     isLoading: boolean;
