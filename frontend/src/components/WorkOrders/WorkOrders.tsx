@@ -7,14 +7,18 @@ import List from './List';
 import './WorkOrders.css';
 
 const WorkOrders = () => {
-    const [workOrders, dispatchWorkOrders] = useFetchReducer<Array<WorkOrder>>([]);
+    const [workOrders, dispatchWorkOrders] = useFetchReducer<WorkOrder[]>([]);
     const navigate = useNavigate();
 
     useEffect(() => {
         const fetchWorkOrderList = async () => {
             dispatchWorkOrders({ type: 'FETCH_INIT' });
-            const workOrders = await handleFetchData('workorders');
-            dispatchWorkOrders({ type: 'FETCH_SUCCESS', payload: workOrders });
+            try {
+                const response = await handleFetchData('/workorders');
+                dispatchWorkOrders({ type: 'FETCH_SUCCESS', payload: response });
+            } catch (error) {
+                dispatchWorkOrders({ type: 'FETCH_FAILURE' });
+            }
         };
         fetchWorkOrderList();
     }, []);
