@@ -25,8 +25,8 @@ const WorkOrders = () => {
     };
 
     const handleWorkOrderClick = (e: React.MouseEvent<HTMLTableRowElement>) => {
-        const workOrder = workOrders.data.find((wo) => wo.id === parseInt(e.currentTarget.children[0].textContent || '0'));
-        navigate(`/workorders/${workOrder?.id}`, { state: workOrder });
+        const id = e.currentTarget.firstChild?.textContent;
+        navigate(`/workorders/${id}`);
     };
 
     return (
