@@ -39,47 +39,45 @@ const Detail = () => {
         }
     };
 
-    const handleShowEmail = () => {
-        console.log('show email');
-    };
-
     return (
-        <div className={styles.container}>
-            <div>
-                <h1>Work Order Detail</h1>
-                {workOrder.isError && <div>Something went wrong ...</div>}
-                {workOrder.isLoading ? (
-                    <div>Loading ...</div>
-                ) : (
+        <div className="container">
+            <h1>Work Order</h1>
+            {workOrder.isError && <div>Something went wrong ...</div>}
+            {workOrder.isLoading ? (
+                <div>Loading ...</div>
+            ) : (
+                <div className={styles.card}>
                     <div>
-                        <div>
-                            <p>
-                                <strong>ID:</strong> {workOrder.data.id}
-                            </p>
-                            <p>
-                                <strong>Name:</strong> {workOrder.data.name}
-                            </p>
-                            <p>
-                                <strong>Status:</strong> {workOrder.data.status}
-                            </p>
-                            <button onClick={handleUpdateWorkOrder}>Update Status</button>
-                            <p>
-                                <strong>Assignees</strong>
-                            </p>
+                        <div className={styles.avatar}>{workOrder.data.id}</div>
+                        <h2>{workOrder.data.name}</h2>
 
-                            <ol>
-                                {workOrder.data.assignees &&
+                        <div className={styles.assignees}>
+                            <h3>Assignees</h3>
+                            <ul>
+                                {workOrder.data.assignees && workOrder.data.assignees.length > 0 ? (
                                     workOrder.data.assignees.map((assignee) => (
-                                        <li key={assignee.id} className={styles.assignee}>
-                                            {assignee.name}
-                                            <span className={styles.tooltiptext}>{assignee.email}</span>
+                                        <li key={assignee.id}>
+                                            <div className={styles.img}></div>
+                                            <p className={styles.tooltip}>
+                                                {assignee.name}
+
+                                                <span className={styles.tooltiptext}>{assignee.email}</span>
+                                            </p>
                                         </li>
-                                    ))}
-                            </ol>
+                                    ))
+                                ) : (
+                                    <li>No assignees</li>
+                                )}
+                            </ul>
+                        </div>
+                        <div className={styles.status}>
+                            <p>{workOrder.data.status === 'OPEN' ? <span className={styles.open}>{workOrder.data.status}</span> : <span className={styles.closed}>{workOrder.data.status}</span>}</p>
+                            <button onClick={handleUpdateWorkOrder}>Update Status</button>
                         </div>
                     </div>
-                )}
-            </div>
+                </div>
+            )}
+
             <div>
                 <Link to="/workorders">
                     <button>Back</button>

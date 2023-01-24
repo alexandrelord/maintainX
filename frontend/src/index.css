@@ -19,6 +19,26 @@ code {
     padding: 3rem;
 }
 
-.container > h1 {
+.container > h1,
+h3,
+p {
     color: rgb(156, 163, 175);
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background-color: rgb(31, 41, 55);
+    border: 1px solid rgb(75 85 99);
+    border-radius: 8px;
+    color: white;
+    font-size: medium;
+}
+
+button:hover {
+    background-color: rgb(55, 65, 81);
+    border: 1px solid rgb(55 65 81);
+}
+
+button:focus {
+    outline: 4px solid rgb(30 64 175);
 }
