@@ -14,7 +14,7 @@ const WorkOrders = () => {
         const fetchWorkOrderList = async () => {
             dispatchWorkOrders({ type: 'FETCH_INIT' });
             try {
-                const response = await handleFetchData('/workorders');
+                const response = await handleFetchData('workorders');
                 dispatchWorkOrders({ type: 'FETCH_SUCCESS', payload: response });
             } catch (error) {
                 dispatchWorkOrders({ type: 'FETCH_FAILURE' });

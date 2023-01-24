@@ -20,7 +20,7 @@ const Create = () => {
         const fetchUsers = async () => {
             dispatchUsers({ type: 'FETCH_INIT' });
             try {
-                const response = await handleFetchData('/users');
+                const response = await handleFetchData('users');
                 dispatchUsers({ type: 'FETCH_SUCCESS', payload: response });
             } catch (error) {
                 dispatchUsers({ type: 'FETCH_FAILURE' });
@@ -45,7 +45,7 @@ const Create = () => {
         const workOrder = { name, users: selectedUserIds };
         if (name) {
             try {
-                await apiCall.post('/workorders/new', workOrder);
+                await apiCall.post('workorders/new', workOrder);
                 setName('');
                 setSelectedUserIds([]);
             } catch (error) {
