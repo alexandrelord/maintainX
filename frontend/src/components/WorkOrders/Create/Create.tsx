@@ -5,11 +5,6 @@ import { User } from '../../../types/types';
 import Select from 'react-select';
 import styles from './Create.module.css';
 
-type SelectOption = {
-    value: string;
-    label: string;
-};
-
 const Create = () => {
     const [users, dispatchUsers] = useFetchReducer<User[]>([]);
     const [name, setName] = useState<string>('');
