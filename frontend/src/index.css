@@ -19,7 +19,9 @@ code {
     padding: 3rem;
 }
 
-.container > h1 {
+.container > h1,
+h3,
+p {
     color: rgb(156, 163, 175);
 }
 
