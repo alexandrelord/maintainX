@@ -3,7 +3,6 @@ import useFetchReducer from '../../hooks/useFetchReducer';
 import { apiCall } from '../../services/apiCall';
 import { User } from '../../types/types';
 import List from '../List/List';
-import styles from './Productivity.module.css';
 
 const Productivity = () => {
     const [inactiveUsers, dispatchInactiveUsers] = useFetchReducer<User[]>([]);

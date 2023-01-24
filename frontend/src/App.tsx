@@ -1,4 +1,3 @@
-import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import WorkOrders from './components/WorkOrders/WorkOrders';
