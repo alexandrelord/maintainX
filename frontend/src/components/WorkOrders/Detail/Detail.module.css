@@ -96,7 +96,7 @@ ul li p {
     visibility: hidden;
     width: 200px;
     background-color: black;
-    color: #fff;
+    color: white;
     text-align: center;
     border-radius: 6px;
     padding: 5px 0;
@@ -107,22 +107,4 @@ ul li p {
 
 .tooltip:hover .tooltiptext {
     visibility: visible;
-}
-
-button {
-    padding: 0.5rem 1rem;
-    background-color: rgb(31, 41, 55);
-    border: 1px solid rgb(75 85 99);
-    border-radius: 8px;
-    color: white;
-    font-size: medium;
-}
-
-button:hover {
-    background-color: rgb(55, 65, 81);
-    border: 1px solid rgb(55 65 81);
-}
-
-button:focus {
-    outline: 4px solid rgb(30 64 175);
 }
