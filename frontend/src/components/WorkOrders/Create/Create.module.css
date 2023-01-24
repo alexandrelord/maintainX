@@ -1,7 +1,9 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-    margin: auto;
+.card {
+    background-color: darkgrey;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    margin: 0 0 1rem;
+    padding: 10rem;
+    width: 70%;
+    color: white;
 }

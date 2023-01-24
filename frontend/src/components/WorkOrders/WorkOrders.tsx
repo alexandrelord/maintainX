@@ -45,7 +45,7 @@ const WorkOrders = () => {
                     render={(item) => {
                         return (
                             <tr onClick={handleWorkOrderClick}>
-                                <td>{item.id}</td>
+                                <th>{item.id}</th>
                                 <td>{item.name}</td>
                                 <td>{item.status}</td>
                             </tr>

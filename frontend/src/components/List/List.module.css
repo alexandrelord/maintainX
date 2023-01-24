@@ -1,25 +1,38 @@
 .listTable {
     border-collapse: collapse;
     border-spacing: 0;
-    width: 70%;
-    border: 1px solid #ddd;
+    width: 600px;
+    border-radius: 8px;
+    overflow: hidden;
+    color: rgb(209 213 219);
+    background-color: rgb(31, 41, 55);
+    text-align: center;
 }
 
 .listTable th,
-td {
-    text-align: left;
-    padding: 16px;
-    border: 1px solid #ddd;
+td,
+thead {
+    padding: 0.75rem 1.5rem;
+}
+
+.listTable tbody th {
+    color: white;
+}
+
+.listTable tr {
+    border-bottom: 1px solid rgb(55 65 81);
 }
 
 .listTable tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: rgb(16, 24, 29);
 }
 
-.listTable thead {
-    background-color: #f2f2f2;
+.listTable > thead {
+    background-color: rgb(55, 65, 81);
+    color: rgb(156, 163, 175);
+    text-transform: uppercase;
 }
 
 .listTable tr:hover {
-    background-color: darkgrey;
+    background-color: rgb(55, 65, 81);
 }

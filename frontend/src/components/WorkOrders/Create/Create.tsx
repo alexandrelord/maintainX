@@ -59,28 +59,30 @@ const Create = () => {
     });
 
     return (
-        <div className={styles.container}>
-            <h1>Create Work Order</h1>
-            {users.isError && <div>Something went wrong ...</div>}
-            {users.isLoading ? (
-                <div>Loading ...</div>
-            ) : (
-                <form onSubmit={handleSubmitWorkOrder}>
-                    <div>
-                        <label htmlFor="name">Name</label>
-                        <input type="text" name="name" id="name" value={name} onChange={(e) => setName(e.target.value)} required />
-                    </div>
-                    <div>
-                        <label htmlFor="user">User</label>
-                        <AnimatedMulti options={options} onChange={handleAddUser} />
-                    </div>
-                    <div>
-                        <button>
-                            <span>Submit</span>
-                        </button>
-                    </div>
-                </form>
-            )}
+        <div className="container">
+            <div className={styles.card}>
+                <h1>New Work Order</h1>
+                {users.isError && <div>Something went wrong ...</div>}
+                {users.isLoading ? (
+                    <div>Loading ...</div>
+                ) : (
+                    <form onSubmit={handleSubmitWorkOrder}>
+                        <div>
+                            <label htmlFor="name">Name</label>
+                            <input type="text" name="name" id="name" value={name} onChange={(e) => setName(e.target.value)} required />
+                        </div>
+                        <div>
+                            <label htmlFor="user">Asign Users</label>
+                            <AnimatedMulti options={options} onChange={handleAddUser} />
+                        </div>
+                        <div>
+                            <button>
+                                <span>Submit</span>
+                            </button>
+                        </div>
+                    </form>
+                )}
+            </div>
         </div>
     );
 };
