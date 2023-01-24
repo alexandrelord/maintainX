@@ -3,7 +3,6 @@ import useFetchReducer from '../../../hooks/useFetchReducer';
 import { apiCall } from '../../../services/apiCall';
 import { User } from '../../../types/types';
 import Select from 'react-select';
-import makeAnimated from 'react-select/animated';
 import styles from './Create.module.css';
 
 type SelectOption = {
@@ -35,8 +34,8 @@ const Create = () => {
         return response.data;
     };
 
-    const handleAddUser = (selectedOptions: SelectOption[]) => {
-        const selectedUserIds = selectedOptions.map((option: SelectOption) => option.value);
+    const handleAddUser = (selectedOptions: any) => {
+        const selectedUserIds = selectedOptions.map((option: any) => option.value);
         setSelectedUserIds(selectedUserIds);
     };
 
@@ -60,22 +59,38 @@ const Create = () => {
 
     return (
         <div className="container">
+            <h1>New Work Order</h1>
             <div className={styles.card}>
-                <h1>New Work Order</h1>
                 {users.isError && <div>Something went wrong ...</div>}
                 {users.isLoading ? (
                     <div>Loading ...</div>
                 ) : (
                     <form onSubmit={handleSubmitWorkOrder}>
-                        <div>
-                            <label htmlFor="name">Name</label>
-                            <input type="text" name="name" id="name" value={name} onChange={(e) => setName(e.target.value)} required />
+                        <div className={styles.taskContainer}>
+                            <label htmlFor="name">Task</label>
+                            <input type="text" name="name" id="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="Drive Pickle Rick to therapy" required />
                         </div>
-                        <div>
-                            <label htmlFor="user">Asign Users</label>
-                            <AnimatedMulti options={options} onChange={handleAddUser} />
+                        <div className={styles.usersContainer}>
+                            <label htmlFor="user">Assign Users</label>
+                            <Select
+                                options={options}
+                                isMulti
+                                onChange={handleAddUser}
+                                styles={{
+                                    control: () => controlStyles()
+                                }}
+                                theme={(theme: any) => ({
+                                    ...theme,
+                                    borderRadius: 8,
+                                    colors: {
+                                        ...theme.colors,
+                                        primary25: 'blue',
+                                        neutral0: 'rgb(75 85 99)'
+                                    }
+                                })}
+                            />
                         </div>
-                        <div>
+                        <div className={styles.buttonContainer}>
                             <button>
                                 <span>Submit</span>
                             </button>
@@ -87,8 +102,18 @@ const Create = () => {
     );
 };
 
-const animatedComponents = makeAnimated();
-
-const AnimatedMulti = (props: any) => <Select closeMenuOnSelect={false} components={animatedComponents} isMulti {...props} />;
+function controlStyles() {
+    return {
+        backgroundColor: 'rgb(75 85 99)',
+        border: '1px solid rgb(107 114 128)',
+        borderRadius: '8px',
+        color: 'white',
+        display: 'flex',
+        width: '400px',
+        padding: '0 8px',
+        fontSize: '18px',
+        marginTop: '0.25rem'
+    };
+}
 
 export default Create;

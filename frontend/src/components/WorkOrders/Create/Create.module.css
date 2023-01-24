@@ -1,9 +1,61 @@
 .card {
-    background-color: darkgrey;
-    border-radius: 4px;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
-    margin: 0 0 1rem;
-    padding: 10rem;
-    width: 70%;
+    margin: 0 0 10px 0;
+    padding: 20px;
+    border: 1px solid rgb(55 65 81);
+    border-radius: 8px;
+    color: rgb(209 213 219);
+    background-color: rgb(31, 41, 55);
+    width: 500px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.taskContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-bottom: 20px;
+}
+
+.usersContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-bottom: 20px;
+}
+
+.card label {
     color: white;
+    font-size: 16px;
+    margin-bottom: 0.25rem;
+    margin-top: 0.25rem;
+}
+
+.card input {
+    background-color: rgb(75 85 99);
+    border: 1px solid rgb(107 114 128);
+    color: white;
+    padding: 0.625rem;
+    border-radius: 8px;
+    width: 390px;
+    font-size: 16px;
+    padding-left: 15px;
+}
+
+input::placeholder {
+    color: rgb(156 163 175);
+}
+
+input:focus {
+    outline: 1px solid rgb(30 64 175);
+    border: 1px solid rgb(30 64 175);
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 40px;
 }
