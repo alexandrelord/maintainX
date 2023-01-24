@@ -54,7 +54,7 @@ const Detail = () => {
                         <div className={styles.assignees}>
                             <h3>Assignees</h3>
                             <ul>
-                                {workOrder.data.assignees && workOrder.data.assignees ? (
+                                {workOrder.data.assignees && workOrder.data.assignees.length > 0 ? (
                                     workOrder.data.assignees.map((assignee) => (
                                         <li key={assignee.id}>
                                             <div className={styles.img}></div>
