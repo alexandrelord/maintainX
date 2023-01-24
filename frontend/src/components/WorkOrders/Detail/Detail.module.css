@@ -1,17 +1,98 @@
-.container {
+.card {
+    margin: 0 0 10px 0;
+    padding: 20px;
+    border: 1px solid rgb(55 65 81);
+    border-radius: 8px;
+    color: rgb(209 213 219);
+    background-color: rgb(31, 41, 55);
+    width: 350px;
+    margin-bottom: 50px;
+}
+
+.avatar {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: rgb(55 65 81);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    font-size: 40px;
+    color: rgb(209 213 219);
+}
+
+.card h2,
+h3 {
+    margin: 10px 0 0 0;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.card h3 {
+    color: rgb(156, 163, 175);
+    font-size: 1.2rem;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.open {
+    color: rgb(74 222 128);
+    font-size: 1.2rem;
+    margin: 0 0 0 0;
+}
+
+.closed {
+    color: rgb(185 28 28);
+    font-size: 1.2rem;
+    margin: 0 0 0 0;
+}
+
+.assignees {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
-    margin: auto;
+    justify-content: space-evenly;
 }
 
-.assignee {
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 0;
+}
+
+ul li {
+    padding: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+ul li p {
+    margin: 0 0 0 15px;
+    font-size: 1.1rem;
+}
+
+.img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-image: url('/src/img/rick.png');
+    background-size: cover;
+}
+.tooltip {
     position: relative;
     margin-bottom: 5px;
 }
 
-.assignee .tooltiptext {
+.tooltip > .tooltiptext {
     visibility: hidden;
     width: 200px;
     background-color: black;
@@ -20,11 +101,28 @@
     border-radius: 6px;
     padding: 5px 0;
 
-    /* Position the tooltip */
     position: absolute;
     z-index: 1;
 }
 
-.assignee:hover .tooltiptext {
+.tooltip:hover .tooltiptext {
     visibility: visible;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background-color: rgb(31, 41, 55);
+    border: 1px solid rgb(75 85 99);
+    border-radius: 8px;
+    color: white;
+    font-size: medium;
+}
+
+button:hover {
+    background-color: rgb(55, 65, 81);
+    border: 1px solid rgb(55 65 81);
+}
+
+button:focus {
+    outline: 4px solid rgb(30 64 175);
 }
