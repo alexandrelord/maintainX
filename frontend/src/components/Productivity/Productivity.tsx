@@ -27,7 +27,7 @@ const Productivity = () => {
     };
 
     return (
-        <div className={styles.container}>
+        <div className="container">
             <h1>Inactive Users</h1>
             {inactiveUsers.isError && <div>Something went wrong ...</div>}
             {inactiveUsers.isLoading ? (
@@ -38,7 +38,7 @@ const Productivity = () => {
                         list={inactiveUsers.data}
                         render={(user: User) => (
                             <tr key={user.id}>
-                                <td>{user.id}</td>
+                                <th>{user.id}</th>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
                             </tr>

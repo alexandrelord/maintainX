@@ -14,7 +14,7 @@ const WorkOrders = () => {
         const fetchWorkOrderList = async () => {
             dispatchWorkOrders({ type: 'FETCH_INIT' });
             try {
-                const response = await handleFetchData('/workorders');
+                const response = await handleFetchData('workorders');
                 dispatchWorkOrders({ type: 'FETCH_SUCCESS', payload: response });
             } catch (error) {
                 dispatchWorkOrders({ type: 'FETCH_FAILURE' });
@@ -45,7 +45,7 @@ const WorkOrders = () => {
                     render={(item) => {
                         return (
                             <tr onClick={handleWorkOrderClick}>
-                                <td>{item.id}</td>
+                                <th>{item.id}</th>
                                 <td>{item.name}</td>
                                 <td>{item.status}</td>
                             </tr>

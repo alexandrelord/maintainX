@@ -1,7 +1,7 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
-import WorkOrderCmpt from './components/WorkOrders/WorkOrders';
+import WorkOrders from './components/WorkOrders/WorkOrders';
 import Detail from './components/WorkOrders/Detail/Detail';
 import Productivity from './components/Productivity/Productivity';
 import Create from './components/WorkOrders/Create/Create';
@@ -12,7 +12,7 @@ function App() {
             <Route element={<Layout />}>
                 <Route index element={<h1>Home</h1>} />
                 <Route path="workorders">
-                    <Route index element={<WorkOrderCmpt />} />
+                    <Route index element={<WorkOrders />} />
                     <Route path=":id" element={<Detail />} />
                 </Route>
                 <Route path="new" element={<Create />} />

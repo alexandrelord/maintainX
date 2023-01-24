@@ -5,12 +5,12 @@
     align-items: center;
     padding: 0 20px;
     height: 60px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    background-color: rgb(16, 24, 29);
+    box-shadow: 0 2px 4px 0 rgb(55, 65, 81);
 }
 
 .link {
-    color: #000;
+    color: rgb(156, 163, 175);
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: 500;
@@ -18,7 +18,7 @@
 }
 
 .active {
-    color: #000;
+    color: whitesmoke;
     text-decoration: underline;
     font-size: 1.2rem;
     font-weight: 500;
