@@ -1,26 +1,19 @@
 import { NavLink } from 'react-router-dom';
-import styles from './NavBar.module.css';
-
-type ActiveStyle = {
-    isActive: boolean;
-};
+import classes from './NavBar.module.css';
 
 const NavBar = () => {
-    // console.log('NavBar rendered');
-    const activeLink = (style: ActiveStyle) => (style.isActive ? `${styles.active}` : `${styles.link}`);
-
     return (
-        <nav className={styles.nav}>
-            <NavLink to="/" className={activeLink}>
+        <nav className={classes.nav}>
+            <NavLink to="/" className={({ isActive }) => (isActive ? classes.active : classes.link)}>
                 Home
             </NavLink>
-            <NavLink to="/workorders" className={activeLink}>
+            <NavLink to="/workorders" className={({ isActive }) => (isActive ? classes.active : classes.link)}>
                 Work Orders
             </NavLink>
-            <NavLink to="/new" className={activeLink}>
+            <NavLink to="/new" className={({ isActive }) => (isActive ? classes.active : classes.link)}>
                 New Work Order
             </NavLink>
-            <NavLink to="/productivity" className={activeLink}>
+            <NavLink to="/productivity" className={({ isActive }) => (isActive ? classes.active : classes.link)}>
                 Productivity
             </NavLink>
         </nav>
