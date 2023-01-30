@@ -43,7 +43,7 @@ const WorkOrders = () => {
                     list={workOrders.data}
                     render={(item) => {
                         return (
-                            <tr onClick={handleWorkOrderClick}>
+                            <tr key={item.id} onClick={handleWorkOrderClick}>
                                 <th>{item.id}</th>
                                 <td>{item.name}</td>
                                 <td>{item.status}</td>

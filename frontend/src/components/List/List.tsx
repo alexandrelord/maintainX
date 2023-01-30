@@ -22,11 +22,7 @@ function List<T>({ list, render }: ListProps<T>) {
                 </tr>
             </thead>
 
-            <tbody>
-                {list.map((item) => (
-                    <>{render(item)}</>
-                ))}
-            </tbody>
+            <tbody>{list.map((item) => render(item))}</tbody>
         </table>
     );
 }
